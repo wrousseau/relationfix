@@ -1,0 +1,26 @@
+{
+  "name": "person",
+  "plural": "people",
+  "base": "User",
+  "idInjection": true,
+  "properties": {
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string",
+      "required": true
+    },
+    "sex": {
+      "type": "boolean",
+      "required": true
+    },
+    "partner": {
+      "type": "person"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}
