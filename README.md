@@ -1,4 +1,6 @@
-couple-emporium
+relationfix
 ===============
 
-In development Meteor app aiming at providing private and customizable services marketplaces to couples
+Currently in development.
+
+Fix your poor relationship by distributing tasks and chores through a marketplace
