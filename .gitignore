@@ -83,4 +83,6 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
->>>>>>> ce2776473583481dc58fdfad37ee7a16af670205
+
+# Bower components
+client/lib
