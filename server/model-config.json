@@ -34,5 +34,13 @@
   "task": {
     "dataSource": "mongoDS",
     "public": true
+  },
+  "couple": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "assignedTask": {
+    "dataSource": "mongoDS",
+    "public": true
   }
 }

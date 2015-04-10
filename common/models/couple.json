@@ -1,21 +1,18 @@
 {
-  "name": "task",
+  "name": "couple",
   "base": "PersistedModel",
   "idInjection": true,
   "properties": {
-    "name": {
+    "firstPartner": {
+      "type": "number",
+      "required": true
+    },
+    "secondPartner": {
+      "type": "number",
+      "required": true
+    },
+    "currency": {
       "type": "string",
-      "required": true
-    },
-    "description": {
-      "type": "string"
-    },
-    "price": {
-      "type": "number",
-      "required": true
-    },
-    "couple": {
-      "type": "number",
       "required": true
     }
   },

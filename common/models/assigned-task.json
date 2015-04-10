@@ -1,21 +1,18 @@
 {
-  "name": "task",
+  "name": "assignedTask",
   "base": "PersistedModel",
   "idInjection": true,
   "properties": {
-    "name": {
-      "type": "string",
-      "required": true
-    },
-    "description": {
-      "type": "string"
-    },
-    "price": {
+    "personId": {
       "type": "number",
       "required": true
     },
-    "couple": {
+    "taskId": {
       "type": "number",
+      "required": true
+    },
+    "finished": {
+      "type": "boolean",
       "required": true
     }
   },
