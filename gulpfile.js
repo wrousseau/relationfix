@@ -9,7 +9,9 @@ gulp.task('default', function() {
     configFile: 'karma.conf.js',
     action: 'watch'
   }));
+});
 
+gulp.task('install', function() {
   return gulp.src('./server/server.js')
   .pipe(loopbackAngular())
   .pipe(rename('lb-services.js'))
@@ -40,4 +42,12 @@ gulp.task('test', function() {
       // Make sure failed tests cause gulp to exit non-zero
       throw err;
     });
+});
+
+gulp.task('karma', function() {
+  return gulp.src(testFiles)
+  .pipe(karma({
+    configFile: 'karma.conf.js',
+    action: 'run'
+  }));
 });
