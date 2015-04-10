@@ -29,7 +29,7 @@ var testFiles = [
   'test/**/*.js'
 ];
 
-gulp.task('karma', function() {
+gulp.task('test', function() {
   // Be sure to return the stream
   return gulp.src(testFiles)
     .pipe(karma({
