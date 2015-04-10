@@ -1,7 +1,8 @@
 angular.module('relationfix.controllers.tasks', ['lbServices'])
 
-.controller('TasksCtrl', ['$scope', 'Task', function($scope, Task) {
+.controller('TasksCtrl', ['$rootScope', '$scope', 'Task', function($rootScope, $scope, Task) {
 
   $scope.tasks = Task.find();
+  $rootScope.title = 'Tasks';
 
 }]);

@@ -1,11 +1,8 @@
-<div ng-controller="TasksCtrl">
-  <md-content layout="column" class="md-padding">
-    <h2 class="md-display-1">Tasks</h2>
-    <md-list>
-      <md-list-item ng-repeat="task in tasks">
-        <p>{{ task.name }}</p>
-      <md-divider ng-if"!$last"></md-divider>
-      </md-list-item>
-    </md-list>
-  </md-content>
-</div>
+<md-content layout="column" class="md-padding">
+  <md-list>
+    <md-list-item ng-repeat="task in tasks">
+      <p>{{ task.name }}</p>
+    <md-divider ng-if"!$last"></md-divider>
+    </md-list-item>
+  </md-list>
+</md-content>

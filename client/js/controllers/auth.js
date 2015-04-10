@@ -2,12 +2,14 @@ angular.module('relationfix.controllers.auth', [
   'relationfix.services.auth'
 ])
 
-.controller('AuthLoginCtrl', ['$scope', 'AuthService', '$state', function($scope, AuthService, $state) {
+.controller('AuthLoginCtrl', ['$rootScope', '$scope', 'AuthService', '$state', function($rootScope, $scope, AuthService, $state) {
 
   $scope.user = {
     email: 'foo@bar.com',
     password: 'foobar'
   };
+
+  $rootScope.title = 'Log In';
 
   $scope.login = function() {
     AuthService.login($scope.user.email, $scope.user.password)
@@ -17,7 +19,9 @@ angular.module('relationfix.controllers.auth', [
   };
 }])
 
-.controller('AuthLogoutCtrl', ['$scope', 'AuthService', '$state', function($scope, AuthService, $state) {
+.controller('AuthLogoutCtrl', ['$rootScope', '$scope', 'AuthService', '$state', function($rootScope, $scope, AuthService, $state) {
+
+  $rootScope.title = 'Log Out';
 
   AuthService.logout()
     .then(function() {
@@ -26,12 +30,14 @@ angular.module('relationfix.controllers.auth', [
 
 }])
 
-.controller('SignUpController', ['$scope', 'AuthService', '$state', function($scope, AuthService, $state) {
+.controller('SignUpController', ['$rootScope', '$scope', 'AuthService', '$state', function($rootScope, $scope, AuthService, $state) {
 
   $scope.user = {
     email: 'baz@qux.com',
     password: 'bazqux'
   };
+
+  $rootScope.title = 'Sign Up';
 
   $scope.register = function() {
     AuthService.register($scope.user.email, $scope.user.password)
