@@ -1,18 +1,13 @@
 angular.module('relationfix.controllers.tasks', [
-  'ngMaterial'
+  'ngMaterial',
+  'relationfix.services.task'
 ])
 
-.controller('TasksCtrl', function($scope) {
+.controller('TasksCtrl', function($scope, Task) {
 
-  $scope.tasks = [
-    {
-      "name": "First task",
-      "description" : "It's great"
-    },
-    {
-      "name": "Second task",
-      "description" : "It's amazing"
-    }
-  ];
+  Task.query()
+  .then(function(tasks) {
+    $scope.tasks = tasks
+  });
 
 });
