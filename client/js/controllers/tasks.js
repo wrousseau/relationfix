@@ -1,13 +1,7 @@
-angular.module('relationfix.controllers.tasks', [
-  'ngMaterial',
-  'relationfix.services.task'
-])
+angular.module('relationfix.controllers.tasks', ['lbServices'])
 
-.controller('TasksCtrl', function($scope, Task) {
+.controller('TasksCtrl', ['$scope', 'Task', function($scope, Task) {
 
-  Task.query()
-  .then(function(tasks) {
-    $scope.tasks = tasks
-  });
+  $scope.tasks = Task.find();
 
-});
+}]);

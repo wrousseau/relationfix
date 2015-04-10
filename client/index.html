@@ -11,26 +11,30 @@
 	<![endif]-->
 </head>
 <body>
+  
   <md-toolbar layout="row">
     <h2 class="md-toolbar-tools">
       <span>RelationFix</span>
     </h2>
   </md-toolbar>
-  <div ng-view></div>
 
-  <script type="text/javascript" src="lib/angular/angular.min.js"></script>
+  <main ui-view></main>
+
+  <script type="text/javascript" src="lib/angular/angular.js"></script>
   <script type="text/javascript" src="lib/angular-animate/angular-animate.min.js"></script>
   <script type="text/javascript" src="lib/angular-aria/angular-aria.min.js"></script>
   <script type="text/javascript" src="lib/angular-material/angular-material.min.js"></script>
   <script type="text/javascript" src="lib/angular-resource/angular-resource.min.js"></script>
-  <script type="text/javascript" src="lib/angular-route/angular-route.min.js"></script>
+  <script type="text/javascript" src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
 
   <script type="text/javascript" src="js/app.js"></script>
 
   <script type="text/javascript" src="js/controllers/controllers.js"></script>
+  <script type="text/javascript" src="js/controllers/auth.js"></script>
   <script type="text/javascript" src="js/controllers/tasks.js"></script>
 
-  <script type="text/javascript" src="js/services/task.js"></script>
+  <script type="text/javascript" src="js/services/auth.js"></script>
+  <script type="text/javascript" src="js/services/lb-services.js"></script>
 
 </body>
 </html>
