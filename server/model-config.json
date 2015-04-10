@@ -27,19 +27,19 @@
     "dataSource": "mongoDS",
     "public": false
   },
-  "person": {
+  "Person": {
     "dataSource": "mongoDS",
     "public": true
   },
-  "task": {
+  "Task": {
     "dataSource": "mongoDS",
     "public": true
   },
-  "couple": {
+  "Relationship": {
     "dataSource": "mongoDS",
     "public": true
   },
-  "assignedTask": {
+  "AssignedTask": {
     "dataSource": "mongoDS",
     "public": true
   }

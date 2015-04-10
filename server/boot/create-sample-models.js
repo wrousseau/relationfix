@@ -2,13 +2,13 @@ var async = require('async');
 
 module.exports = function(app) {
   //data sources
-  var mongoDs = app.dataSources.mongoDs;
+  var mongoDS = app.dataSources.mongoDS;
   //create all models
   createRelationships(function(err, relationships) {
     if (err) throw err;
     async.parallel({
-      people: async.apply(createPeople),
-      tasks: async.apply(createTasks),
+      people: async.apply(createPeople, relationships),
+      tasks: async.apply(createTasks, relationships),
     }, function(err, results) {
       if (err) throw err;
       createAssignedTasks(results.tasks, results.people, function(err) {
@@ -19,7 +19,7 @@ module.exports = function(app) {
 
   //create relationships
   function createRelationships(cb) {
-    mongoDs.automigrate('Relationship', function(err) {
+    mongoDS.automigrate('Relationship', function(err) {
       if (err) return cb(err);
       var Relationship = app.models.Relationship;
       Relationship.create([
@@ -35,33 +35,48 @@ module.exports = function(app) {
 
   //create people
   function createPeople(relationships, cb) {
-    mongoDs.automigrate('Person', function(err) {
+    mongoDS.automigrate('Person', function(err) {
       if (err) return cb(err);
-      var People = app.models.People;
-      People.create([
+      var Person = app.models.Person;
+      Person.create([
         {
           email: 'walter.white@gmail.com',
           password: 'iamthedanger',
+          firstName: 'Walter',
+          lastName: 'White',
+          sex: 0,
           relationshipId: relationships[0].id
         },
         {
           email: 'skyler.white@yahoo.fr',
-          password: 'annoying'
+          password: 'annoying',
+          firstName: 'Skyler',
+          lastName: 'White',
+          sex: 1,
           relationshipId: relationships[0].id
         },
         {
           email: 'khaleesi@gmail.com',
           password: 'wherearemydragons',
+          firstName: 'Daenerys',
+          lastName: 'Targaryen',
+          sex: 1,
           relationshipId: relationships[1].id
         },
         {
           email: 'daario.naharis@hotmail.com',
           password: 'realthug',
+          firstName: 'Daario',
+          lastName: 'Naharis',
+          sex: 1,
           relationshipId: relationships[1].id
         },
         {
           email: 'jorah.mormont@gmail.com',
-          password: 'khaleesi'
+          password: 'khaleesi',
+          firstName: 'Jorah',
+          lastName: 'Khaleesi',
+          sex: 0,
         }
       ], cb);
     });
@@ -69,7 +84,7 @@ module.exports = function(app) {
 
     //create tasks
     function createTasks(relationships, cb) {
-      mongoDs.automigrate('Task', function(err) {
+      mongoDS.automigrate('Task', function(err) {
         if (err) return cb(err);
         var Task = app.models.Task;
         Task.create([
@@ -82,7 +97,7 @@ module.exports = function(app) {
           {
             name: 'Cooking meth',
             description: '99% purity required',
-            price: 2000
+            price: 2000,
             relationshipId: relationships[0].id
           },
           {
@@ -103,7 +118,7 @@ module.exports = function(app) {
 
     //create assigned tasks
     function createAssignedTasks(tasks, people, cb) {
-      mongoDs.automigrate('Task', function(err) {
+      mongoDS.automigrate('AssignedTask', function(err) {
         if (err) return cb(err);
         var AssignedTask = app.models.AssignedTask;
         AssignedTask.create([
