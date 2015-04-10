@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "server/server.js",
   "scripts": {
-    "pretest": "jshint ."
+    "test": "gulp karma"
   },
   "dependencies": {
     "compression": "^1.0.3",
