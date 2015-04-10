@@ -11,7 +11,7 @@ describe('TasksCtrl', function() {
   }));
 
   it('should load tasks', function(){
-    expect(scope.title).to.equal('Tasks')
+    scope.title.should.equal('Tasks')
   });
 
 });
