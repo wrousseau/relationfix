@@ -9,7 +9,18 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "people": {
+      "type": "hasMany",
+      "model": "Person",
+      "foreignKey": ""
+    },
+    "tasks": {
+      "type": "hasMany",
+      "model": "Task",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": []
 }

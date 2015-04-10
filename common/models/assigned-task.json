@@ -9,7 +9,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "task": {
+      "type": "belongsTo",
+      "model": "Task",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": []
 }

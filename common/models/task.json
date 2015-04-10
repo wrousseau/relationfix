@@ -16,7 +16,18 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "relationship": {
+      "type": "belongsTo",
+      "model": "Relationship",
+      "foreignKey": ""
+    },
+    "assignedTasks": {
+      "type": "hasMany",
+      "model": "AssignedTask",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": []
 }
