@@ -1,6 +1,6 @@
 {
-  "name": "person",
-  "plural": "people",
+  "name": "Person",
+  "plural": "People",
   "base": "User",
   "idInjection": true,
   "properties": {
@@ -14,9 +14,6 @@
     "sex": {
       "type": "boolean",
       "required": true
-    },
-    "partner": {
-      "type": "person"
     }
   },
   "validations": [],

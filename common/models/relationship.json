@@ -1,16 +1,8 @@
 {
-  "name": "couple",
+  "name": "Relationship",
   "base": "PersistedModel",
   "idInjection": true,
   "properties": {
-    "firstPartner": {
-      "type": "number",
-      "required": true
-    },
-    "secondPartner": {
-      "type": "number",
-      "required": true
-    },
     "currency": {
       "type": "string",
       "required": true

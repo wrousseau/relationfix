@@ -1,16 +1,8 @@
 {
-  "name": "assignedTask",
+  "name": "AssignedTask",
   "base": "PersistedModel",
   "idInjection": true,
   "properties": {
-    "personId": {
-      "type": "number",
-      "required": true
-    },
-    "taskId": {
-      "type": "number",
-      "required": true
-    },
     "finished": {
       "type": "boolean",
       "required": true

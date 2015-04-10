@@ -1,5 +1,5 @@
 {
-  "name": "task",
+  "name": "Task",
   "base": "PersistedModel",
   "idInjection": true,
   "properties": {
@@ -11,10 +11,6 @@
       "type": "string"
     },
     "price": {
-      "type": "number",
-      "required": true
-    },
-    "couple": {
       "type": "number",
       "required": true
     }
