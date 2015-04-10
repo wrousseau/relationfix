@@ -37,3 +37,5 @@ A test suite is in progress and can be performed by running the following comman
 To run the tests once, the following command can be used. Used for CI.
 
     gulp karma
+
+Running the test suite also generates coverage reports (both formats html and lcov are included in the `coverage` directory).

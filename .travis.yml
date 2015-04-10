@@ -3,6 +3,11 @@ node_js:
   - "0.12"
   - "0.11"
   - "0.10"
+addons:
+  code_climate:
+    repo_token: 9a0829efff7b3f940eed12e0ecb12d756f3a0965c9bb4f75bd08a1400176e2fc
 before_script:
   - npm install -g bower
   - bower install
+after_script:
+  - codeclimate < coverage/lcov/lcov.info
