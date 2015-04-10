@@ -27,14 +27,22 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'client/js/**/*.js': ['coverage'],
+      'common/models/*.js': ['coverage'],
+      'server/**/*.js': ['coverage']
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['coverage'],
 
+    // coverage reporter and output directory
+    coverageReporter : {
+      type: 'html',
+      dir: 'coverage/'
+    },
 
     // web server port
     port: 9876,
