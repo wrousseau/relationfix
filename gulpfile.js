@@ -24,6 +24,7 @@ var testFiles = [
   'client/lib/angular-animate/angular-animate.js',
   'client/lib/angular-aria/angular-aria.js',
   'client/lib/angular-material/angular-material.js',
+  'client/lib/angular-messages/angular-messages.js',
   'client/lib/angular-mocks/angular-mocks.js',
   'client/lib/angular-ui-router/release/angular-ui-router.js',
   'client/js/app.js',

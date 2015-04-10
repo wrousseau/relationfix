@@ -1,13 +1,11 @@
 angular.module('relationfix.controllers.auth', [
+  'ngMessages',
   'relationfix.services.auth'
 ])
 
 .controller('AuthLoginCtrl', ['$rootScope', '$scope', 'AuthService', '$state', function($rootScope, $scope, AuthService, $state) {
 
-  $scope.user = {
-    email: 'foo@bar.com',
-    password: 'foobar'
-  };
+  $scope.user = {};
 
   $rootScope.title = 'Log In';
 
@@ -30,17 +28,14 @@ angular.module('relationfix.controllers.auth', [
 
 }])
 
-.controller('SignUpController', ['$rootScope', '$scope', 'AuthService', '$state', function($rootScope, $scope, AuthService, $state) {
+.controller('RegisterCtrl', ['$rootScope', '$scope', 'AuthService', '$state', function($rootScope, $scope, AuthService, $state) {
 
-  $scope.user = {
-    email: 'baz@qux.com',
-    password: 'bazqux'
-  };
+  $scope.user = {};
 
-  $rootScope.title = 'Sign Up';
+  $rootScope.title = 'Register';
 
   $scope.register = function() {
-    AuthService.register($scope.user.email, $scope.user.password)
+    AuthService.register($scope.user)
       .then(function() {
         $state.transitionTo('sign-up-success');
       });

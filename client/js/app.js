@@ -25,10 +25,10 @@ angular.module('relationfix', [
       url: '/logout',
       controller: 'AuthLogoutCtrl'
     })
-    .state('sign-up', {
-      url: '/sign-up',
-      templateUrl: 'views/sign-up-form.html',
-      controller: 'SignUpCtrl',
+    .state('register', {
+      url: '/register',
+      templateUrl: 'views/register.html',
+      controller: 'RegisterCtrl',
     })
     .state('sign-up-success', {
       url: '/sign-up/success',

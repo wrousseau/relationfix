@@ -24,12 +24,9 @@ angular.module('relationfix.services.auth', ['lbServices'])
      });
   }
 
-  function register(email, password) {
+  function register(person) {
     return User
-      .create({
-       email: email,
-       password: password
-     })
+      .create(person)
      .$promise;
   }
 
